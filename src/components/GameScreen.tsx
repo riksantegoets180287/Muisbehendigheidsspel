@@ -56,9 +56,13 @@ export default function GameScreen({ level, onLevelComplete, onGameOver }: GameS
 
     const color = level >= 5 ? (Math.random() < 0.5 ? 'blue' : 'orange') : 'blue';
 
+    const padding = radius + 20;
+    const randomX = padding + Math.random() * (CONTAINER_WIDTH - padding * 2);
+    const randomY = padding + Math.random() * (CONTAINER_HEIGHT - padding * 2);
+
     setBall({
-      x: CONTAINER_WIDTH / 2,
-      y: CONTAINER_HEIGHT / 2,
+      x: randomX,
+      y: randomY,
       vx,
       vy,
       radius,
